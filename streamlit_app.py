@@ -1,7 +1,7 @@
 import streamlit as sl
 import pandas as pd
 
-sl.title("My Parents New Healthy Diner")
+sl.title("My Parents New Healthy Diner !!!")
 
 sl.header("Breakfast Menu")
 
@@ -25,3 +25,10 @@ import requests
 sl.header('Fruityvice Fruit Advice!')
 fruityvice_response = requests.get('https://fruityvice.com/api/fruit/watermelon')
 sl.text(fruityvice_response.json()) 
+
+# json_normalzie convert json structure into flat table
+fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
+
+# output to screen as table
+# set dataframe with a table from json_normalize
+sl.dataframe(fruityvice_normalized)
