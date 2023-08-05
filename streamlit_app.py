@@ -23,4 +23,4 @@ sl.dataframe(fruits_to_show)
 # new section to display fruityvice API response
 import requests
 fruityvice_response = requests.get('https://fruityvice.com/api/fruit/watermelon')
-sl.text(fruityvice_response)
+sl.text(fruityvice_response) 
