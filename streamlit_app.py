@@ -26,7 +26,6 @@ sl.header('Fruityvice Fruit Advice!')
 fruit_choice = sl.text_input('What fruit would you like information about?', 'Kiwi')
 fruityvice_response = requests.get('https://fruityvice.com/api/fruit/' + fruit_choice)
 sl.write('The user entered', fruit_choice)
-#sl.text(fruityvice_response.json()) 
 
 # json_normalzie convert json structure into flat table
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
@@ -35,4 +34,4 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # set dataframe with a table from json_normalize
 sl.dataframe(fruityvice_normalized)
 
-from snowflake import connector
+import snowflake.connector
