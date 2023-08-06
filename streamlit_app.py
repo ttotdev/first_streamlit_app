@@ -44,4 +44,4 @@ sl.dataframe(my_data_rows)
 
 
 add_my_fruit = sl.text_input('What fruit would you like to add?', 'jackfruit')
-sl.write('Thanks for dding ', fruit_choice)
+sl.write('Thanks for adding ', add_my_fruit)
