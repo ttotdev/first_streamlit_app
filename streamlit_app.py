@@ -46,7 +46,7 @@ my_data_rows = my_cur.fetchall()
 
 sl.header('The fruit load list contains:')
 #Snowflake-related functions
-def get_fruit_load_list()
+def get_fruit_load_list():
     with my_cnx.cursor as my_cnx:
         my_cnx.execute("select * from fruit_load_list")
         return my_cur.fetchall()
