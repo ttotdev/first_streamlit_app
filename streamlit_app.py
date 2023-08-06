@@ -40,13 +40,6 @@ except URLError as e:
 
 sl.write('The user entered', fruit_choice)
 
-# json_normalzie convert json structure into flat table
-fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
-
-# output to screen as table
-# set dataframe with a table from json_normalize
-
-
 sl.stop();
 
 my_cnx = snowflake.connector.connect(**sl.secrets["snowflake"])
