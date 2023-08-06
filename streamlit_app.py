@@ -51,7 +51,7 @@ def get_fruit_load_list():
         my_cnx.execute("select * from fruit_load_list")
         return my_cur.fetchall()
 
-Add a button to load the fruit
+# Add a button to load the fruit
 if sl.button('Get Fruit Load List"):
     my_cnx = snowflake.connector.connect(**sl.secrets["snowflake"])
     my_data_rows = get_fruit_load_list()
