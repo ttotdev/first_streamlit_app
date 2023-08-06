@@ -40,6 +40,8 @@ sl.write('The user entered', fruit_choice)
 
 sl.header('The fruit load list contains:')
 #Snowflake-related functions
+my_cnx = snowflake.connector.connect(**sl.secrets["snowflake"])
+
 def get_fruit_load_list():
     with my_cnx.cursor as my_cnx:
         my_cnx.execute("select * from fruit_load_list")
@@ -48,8 +50,8 @@ def get_fruit_load_list():
 # Add a button to load the fruit
 if sl.button('Get Fruit Load List'):
     my_cnx = snowflake.connector.connect(**sl.secrets["snowflake"])
-    my_data_rows = get_fruit_load_list()
-    sl.dataframe(my_data_rows)
+    ret = get_fruit_load_list()
+    sl.dataframe(ret)
 
 # Allow the end user to add a fruit to the list
 def insert_row_snowflake(new_fruit):
