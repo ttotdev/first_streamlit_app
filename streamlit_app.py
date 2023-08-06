@@ -63,5 +63,3 @@ if sl.button('Add a Fruit to the List'):
     ret = insert_row_snowflake(add_my_fruit)
     sl.text(ret)
     
-sl.write('Thanks for adding ', add_my_fruit)
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
